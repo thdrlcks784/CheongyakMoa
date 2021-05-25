@@ -20,7 +20,7 @@
             android:id="@+id/tv_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@{item.title}"
+            android:text="@{item.AIS_TP_CD_NM}"
             android:textStyle="bold"
             android:textSize="40sp"
             android:gravity="center"
