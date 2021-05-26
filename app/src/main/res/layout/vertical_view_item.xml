@@ -13,34 +13,47 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/cardview_dark_background"
+        android:background="@drawable/round_style"
+        android:layout_margin="10dp"
         >
+
+        <TextView
+            android:id="@+id/tv_category"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{item.AIS_TP_CD_NM}"
+            android:textStyle="bold"
+            android:textSize="15sp"
+            android:gravity="center"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:layout_marginLeft="5dp"/>
+
+        <TextView
+            android:id="@+id/tv_commendcenter"
+            android:layout_width="wrap_content"
+
+            android:layout_height="wrap_content"
+            android:text="@{item.DEP_NM}"
+            android:textStyle="bold"
+            android:textSize="15sp"
+            android:gravity="center"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:layout_marginRight="5dp"/>
 
         <TextView
             android:id="@+id/tv_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@{item.AIS_TP_CD_NM}"
+            android:text="@{item.BBS_TL}"
             android:textStyle="bold"
-            android:textSize="40sp"
+            android:textSize="25sp"
             android:gravity="center"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintBottom_toTopOf="@+id/iv_icon"
-            />
+            app:layout_constraintTop_toBottomOf="@id/tv_category"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"/>
 
-        <androidx.appcompat.widget.AppCompatImageView
-            android:id="@+id/iv_icon"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:src="@drawable/ic_launcher_background"
-            app:layout_constraintTop_toBottomOf="@+id/tv_title"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"
-            />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

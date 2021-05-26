@@ -25,7 +25,6 @@ class TotalItemViewModel : ViewModel(){
 
     private fun showItemList() {
         lhDataRequest()
-        Log.d("TAG","test$itemArr")
     }
 
 
@@ -50,9 +49,11 @@ class TotalItemViewModel : ViewModel(){
                 for(i in 0.. size-1){
                     var json_objdetail : JSONObject = jsonobj.getJSONObject(i)
                     var item : Item = Item(
-                        json_objdetail.getString("AIS_TP_CD_NM")
-
+                        json_objdetail.getString("DEP_NM"),
+                        json_objdetail.getString("AIS_TP_CD_NM"),
+                        json_objdetail.getString("BBS_TL")
                     )
+                    Log.d("TAG","test$item")
                     itemArr.add(item)
                 }
                 _itemList.postValue(itemArr)
