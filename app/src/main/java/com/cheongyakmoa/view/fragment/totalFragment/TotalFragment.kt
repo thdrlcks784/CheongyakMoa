@@ -19,11 +19,7 @@ class totalFragment : Fragment(){
 
     private lateinit var viewModel: TotalItemViewModel
 
-    override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View {
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
         return FragmentTotalBinding.inflate(
             inflater,
             container,
@@ -40,10 +36,12 @@ class totalFragment : Fragment(){
         }.root
     }
 
-    override fun onStart() {
-        super.onStart()
+    override fun onActivityCreated(savedInstanceState: Bundle?) {
+        super.onActivityCreated(savedInstanceState)
         viewModel.onStart()
     }
+
+
 
     fun <T : ViewModel> FragmentActivity.obtainViewModel(viewModelClass: Class<T>) =
         ViewModelProvider(viewModelStore,

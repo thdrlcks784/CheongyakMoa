@@ -18,11 +18,12 @@
             android:id="@+id/recyclerView"
             android:layout_width="match_parent"
             android:layout_height="0dp"
+            android:background="#FFFFFF"
             bind:item="@{vm.itemList}"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            />
+            android:paddingBottom="90dp"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

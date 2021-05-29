@@ -13,7 +13,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@drawable/round_style"
+        android:background="@drawable/bottom_stroke_style"
         android:layout_margin="10dp"
         >
 
@@ -23,24 +23,23 @@
             android:layout_height="wrap_content"
             android:text="@{item.AIS_TP_CD_NM}"
             android:textStyle="bold"
-            android:textSize="15sp"
-            android:gravity="center"
+            android:textSize="14sp"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
-            android:layout_marginLeft="5dp"/>
+            android:layout_marginTop = "3dp"
+            android:layout_marginLeft="10dp"/>
 
         <TextView
             android:id="@+id/tv_commendcenter"
             android:layout_width="wrap_content"
-
             android:layout_height="wrap_content"
             android:text="@{item.DEP_NM}"
             android:textStyle="bold"
-            android:textSize="15sp"
-            android:gravity="center"
+            android:textSize="14sp"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintRight_toRightOf="parent"
-            android:layout_marginRight="5dp"/>
+            app:layout_constraintLeft_toRightOf="@id/tv_category"
+            android:layout_marginTop = "3dp"
+            android:layout_marginLeft="2dp"/>
 
         <TextView
             android:id="@+id/tv_title"
@@ -48,11 +47,24 @@
             android:layout_height="wrap_content"
             android:text="@{item.BBS_TL}"
             android:textStyle="bold"
-            android:textSize="25sp"
-            android:gravity="center"
+            android:textSize="18sp"
+            android:layout_marginLeft ="10dp"
             app:layout_constraintTop_toBottomOf="@id/tv_category"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"/>
+
+        <TextView
+            android:id="@+id/tv_start_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{item.BBS_WOU_DTTM}"
+            android:textStyle="bold"
+            android:textSize="14sp"
+            android:gravity="center"
+            app:layout_constraintTop_toBottomOf="@id/tv_title"
+            app:layout_constraintLeft_toLeftOf="parent"
+            android:layout_marginLeft="10dp"
+            android:paddingBottom="10dp"/>
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

@@ -12,10 +12,10 @@ import java.io.IOException
 
 class TotalItemViewModel : ViewModel(){
 
+    private var pageNumber : Int = 1
     private val _itemList = MutableLiveData<List<Item>>()
     private val itemArr = arrayListOf<Item>()
-    val itemList: LiveData<List<Item>>
-        get() = _itemList
+    val itemList: LiveData<List<Item>> get() = _itemList
 
 
 
@@ -30,7 +30,8 @@ class TotalItemViewModel : ViewModel(){
 
     fun lhDataRequest(){
 
-        val url = "http://apis.data.go.kr/B552555/lhNoticeInfo/getNoticeInfo?serviceKey=kaSHBmdu6J6CHyCoEnJzyueeR2YEx%2F0hldHc2jDdBBQL%2FIkBOf58bLkUXioX5YcRrFGXBEiqCEKvC52YzYJ%2FeA%3D%3D&PG_SZ=20&PAGE=1"
+        val url = "http://apis.data.go.kr/B552555/lhNoticeInfo/getNoticeInfo?serviceKey=kaSHBmdu6J6CHyCoEnJzyueeR2YEx%2F0hldHc2jDdBBQL%2FIkBOf58bLkUXioX5YcRrFGXBEiqCEKvC52YzYJ%2FeA%3D%3D&PG_SZ=20&PAGE=$pageNumber"
+        pageNumber++
 
 
         val request = Request.Builder().url(url).build()
@@ -44,14 +45,15 @@ class TotalItemViewModel : ViewModel(){
             override fun onResponse(call: Call, response: Response) {
                 val body = response.body()!!.string()
 
-                val jsonobj: JSONArray = JSONArray(body.toString()).getJSONObject(1).getJSONArray("dsList")
-                var size: Int = jsonobj.length()
-                for(i in 0.. size-1){
-                    var json_objdetail : JSONObject = jsonobj.getJSONObject(i)
+                val jsonLhObj: JSONArray = JSONArray(body.toString()).getJSONObject(1).getJSONArray("dsList")
+                var jsonLhObjSize: Int = jsonLhObj.length()
+                for(i in 0.. jsonLhObjSize-1){
+                    var jsonLhDetale : JSONObject = jsonLhObj.getJSONObject(i)
                     var item : Item = Item(
-                        json_objdetail.getString("DEP_NM"),
-                        json_objdetail.getString("AIS_TP_CD_NM"),
-                        json_objdetail.getString("BBS_TL")
+                        jsonLhDetale.getString("DEP_NM"),
+                        "["+jsonLhDetale.getString("AIS_TP_CD_NM")+"]",
+                        jsonLhDetale.getString("BBS_TL"),
+                        jsonLhDetale.getString("BBS_WOU_DTTM")
                     )
                     Log.d("TAG","test$item")
                     itemArr.add(item)

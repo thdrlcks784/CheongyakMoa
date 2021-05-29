@@ -10,6 +10,7 @@ import com.cheongyakmoa.view.dto.Item
 class TotalRecyclerViewAdapter(private var items: List<Item>)
     :RecyclerView.Adapter<TotalRecyclerViewAdapter.VerticalViewHolder>(){
 
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): VerticalViewHolder {
         return VerticalViewItemBinding
             .inflate(LayoutInflater.from(parent.context), parent, false)
@@ -25,6 +26,7 @@ class TotalRecyclerViewAdapter(private var items: List<Item>)
     override fun onBindViewHolder(holder: VerticalViewHolder, position: Int) {
         holder.bind(items[position])
     }
+
 
     fun setItem(itemList: List<Item>) {
         items = itemList

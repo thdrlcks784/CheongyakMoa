@@ -6,6 +6,7 @@ import android.util.Log
 import androidx.databinding.DataBindingUtil
 import androidx.viewpager2.widget.ViewPager2
 import com.cheongyakmoa.view.databinding.ActivityMainBinding
+import com.cheongyakmoa.view.fragment.totalFragment.TotalItemViewModel
 import com.cheongyakmoa.view.fragment.totalFragment.totalFragment
 import com.google.android.material.tabs.TabLayoutMediator
 
@@ -43,5 +44,6 @@ class MainActivity : AppCompatActivity() {
         TabLayoutMediator(binding.tabLayout, viewPager) { tab, position ->
             tab.text = "Tab ${position + 1}"
         }.attach()
+
     }
 }
