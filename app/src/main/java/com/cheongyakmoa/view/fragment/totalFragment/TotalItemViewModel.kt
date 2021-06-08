@@ -50,10 +50,10 @@ class TotalItemViewModel : ViewModel(){
                 for(i in 0.. jsonLhObjSize-1){
                     var jsonLhDetale : JSONObject = jsonLhObj.getJSONObject(i)
                     var item : Item = Item(
-                        jsonLhDetale.getString("DEP_NM"),
-                        "["+jsonLhDetale.getString("AIS_TP_CD_NM")+"]",
+                        jsonLhDetale.getString("AIS_TP_CD_NM"),
                         jsonLhDetale.getString("BBS_TL"),
-                        jsonLhDetale.getString("BBS_WOU_DTTM")
+                        jsonLhDetale.getString("BBS_WOU_DTTM"),
+                        "조회수 " + jsonLhDetale.getString("ALL_CNT")
                     )
                     Log.d("TAG","test$item")
                     itemArr.add(item)
