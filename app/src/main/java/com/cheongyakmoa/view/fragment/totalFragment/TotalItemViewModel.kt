@@ -30,7 +30,7 @@ class TotalItemViewModel : ViewModel(){
 
     fun lhDataRequest(){
 
-        val url = "http://apis.data.go.kr/B552555/lhNoticeInfo/getNoticeInfo?serviceKey=kaSHBmdu6J6CHyCoEnJzyueeR2YEx%2F0hldHc2jDdBBQL%2FIkBOf58bLkUXioX5YcRrFGXBEiqCEKvC52YzYJ%2FeA%3D%3D&PG_SZ=20&PAGE=$pageNumber"
+        val url = "http://apis.data.go.kr/B552555/lhNoticeInfo/getNoticeInfo?serviceKey=kaSHBmdu6J6CHyCoEnJzyueeR2YEx%2F0hldHc2jDdBBQL%2FIkBOf58bLkUXioX5YcRrFGXBEiqCEKvC52YzYJ%2FeA%3D%3D&PG_SZ=20&PAGE=$pageNumber&SCH_ST_DT=2017-01-01"
         pageNumber++
 
 

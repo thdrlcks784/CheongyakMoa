@@ -28,6 +28,8 @@ class MainActivity : AppCompatActivity() {
                 addFragment(totalFragment())
             }
 
+
+
         // 2.ViewPager2의 Adapter 설정
         val viewPager: ViewPager2 = binding.pager.apply {
             adapter = pagerAdapter
