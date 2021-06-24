@@ -2,6 +2,7 @@ package com.cheongyakmoa.view.fragment.totalFragment
 
 import android.util.Log
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -21,11 +22,6 @@ class TotalRecyclerViewAdapter(private var items: List<Item>)
                 VerticalViewHolder(this)
             }
     }
-
-
-    
-
-
 
     override fun getItemCount(): Int {
         return items.size
@@ -50,14 +46,15 @@ class TotalRecyclerViewAdapter(private var items: List<Item>)
         fun bind(item: Item) {
             binding.item = item
         }
-
-
     }
 
     class ProgressBarHolder(private val binding: ProgressBarBinding)
         :RecyclerView.ViewHolder(binding.root){
 
         }
+
+
+
 
 
     //무한스크롤 listener
@@ -75,5 +72,6 @@ class TotalRecyclerViewAdapter(private var items: List<Item>)
         }
 
     }
+
 
 }

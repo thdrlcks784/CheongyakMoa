@@ -61,7 +61,7 @@
             android:id="@+id/tv_total_view"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@{item.ALL_CNT}"
+            android:text="@{item.INQ_CNT}"
             android:textStyle="bold"
             android:textSize="13sp"
             app:layout_constraintTop_toBottomOf="@id/tv_title"

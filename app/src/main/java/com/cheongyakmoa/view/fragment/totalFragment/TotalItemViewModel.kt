@@ -53,7 +53,8 @@ class TotalItemViewModel : ViewModel(){
                         jsonLhDetale.getString("AIS_TP_CD_NM"),
                         jsonLhDetale.getString("BBS_TL"),
                         jsonLhDetale.getString("BBS_WOU_DTTM"),
-                        "조회수 " + jsonLhDetale.getString("ALL_CNT")
+                        "조회수 " + jsonLhDetale.getString("INQ_CNT"),
+                        jsonLhDetale.getString("LINK_URL")
                     )
                     Log.d("TAG","test$item")
                     itemArr.add(item)
